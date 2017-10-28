@@ -74,7 +74,9 @@
           } catch(ex) {
           //  log.innerHTML = 'Recognition error: ' + ex.message + '<br />' + log.innerHTML;
           }
-          recognizer.stop();
+          setTimeout(function(){
+            recognizer.stop();
+          },4000);
         });
 
         document.getElementById('button-stop-ws').addEventListener('click', function() {
