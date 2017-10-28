@@ -50,7 +50,7 @@
 
           for (var i = event.resultIndex; i < event.results.length; i++) {
             if (event.results[i].isFinal) {
-              transcription.textContent = event.results[i][0].transcript + ' (Confidence: ' + event.results[i][0].confidence + ')';
+              transcription.textContent = event.results[i][0].transcript;
             } else {
               transcription.textContent += event.results[i][0].transcript;
             }
@@ -64,7 +64,7 @@
 
         document.getElementById('button-play-ws').addEventListener('click', function() {
           // Set if we need interim results
-          recognizer.interimResults = document.querySelector('input[name="recognition-type"][value="interim"]').checked;
+          //recognizer.interimResults = document.querySelector('input[name="recognition-type"][value="interim"]').checked;
 
           try {
             recognizer.start();
