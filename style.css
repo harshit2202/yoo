@@ -4,7 +4,9 @@ body
         margin: 2em auto;
         font-size: 20px;
       }
-
+.rrr{
+      padding-left: 20%;     
+}
       h1
       {
         text-align: center;
