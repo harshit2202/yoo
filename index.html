@@ -16,8 +16,8 @@
     <label><input type="radio" name="recognition-type" value="final"  /></label>
    <label><input type="radio" name="recognition-type" value="interim" checked="checked"/></label> 
 
-    <h3>Log</h3>
-    <div id="log"></div>
+    <!--<h3>Log</h3>
+    <!--<div id="log"></div>  -->
 
     <div class="buttons-wrapper">
       <button id="button-play-ws" class="button-demo">Play demo</button>
@@ -39,7 +39,7 @@
       } else {
         var recognizer = new window.SpeechRecognition();
         var transcription = document.getElementById('transcription');
-        var log = document.getElementById('log');
+     //   var log = document.getElementById('log');
 
         // Recogniser doesn't stop listening even if the user pauses
         recognizer.continuous = true;
@@ -59,7 +59,7 @@
 
         // Listen for errors
         recognizer.onerror = function(event) {
-          log.innerHTML = 'Recognition error: ' + event.message + '<br />' + log.innerHTML;
+        //  log.innerHTML = 'Recognition error: ' + event.message + '<br />' + log.innerHTML;
         };
 
         document.getElementById('button-play-ws').addEventListener('click', function() {
@@ -68,20 +68,20 @@
 
           try {
             recognizer.start();
-            log.innerHTML = 'Recognition started' + '<br />' + log.innerHTML;
+           // log.innerHTML = 'Recognition started' + '<br />' + log.innerHTML;
           } catch(ex) {
-            log.innerHTML = 'Recognition error: ' + ex.message + '<br />' + log.innerHTML;
+          //  log.innerHTML = 'Recognition error: ' + ex.message + '<br />' + log.innerHTML;
           }
         });
 
         document.getElementById('button-stop-ws').addEventListener('click', function() {
           recognizer.stop();
-          log.innerHTML = 'Recognition stopped' + '<br />' + log.innerHTML;
+        //  log.innerHTML = 'Recognition stopped' + '<br />' + log.innerHTML;
         });
 
         document.getElementById('clear-all').addEventListener('click', function() {
           transcription.textContent = '';
-          log.textContent = '';
+        //  log.textContent = '';
         });
       }
 
